@@ -10,23 +10,35 @@ class Animal {
   }
 
   mostrarAtributos(){
-    return this.atributos();
+    try{
+      return this.atributos();
+    } catch(erro){
+      console.log(erro.name)
+    }
+    
   } 
 
   atributos() {
-    return {
-      nome: this.nome,
-      idade: this.idade,
-      especie: this.especie
-    };
+    if ((this.nome != "") && (this.idade != "") && (this.especie != "")){
+      return {
+        nome: this.nome,
+        idade: this.idade,
+        especie: this.especie
+      };
+    } else{
+        throw new Error ("Nome, idade ou especie estão vazios")
+    }
   }
 }
 
-const meuAnimal = new Animal("Fido", 3, "cachorro");
-const atributos = meuAnimal.mostrarAtributos();
+//const meuAnimal = new Animal("Fido", 3, "cachorro");
+//const atributos = meuAnimal.mostrarAtributos();
+
+const meuAnimal2 = new Animal("", 3, "cachorro");
+const atributos2 = meuAnimal2.atributos();
 
 // Imprimindo os atributos
-console.log(atributos.nome);   
-console.log(atributos.idade);  
-console.log(atributos.especie); 
+console.log(atributos2.nome);   
+console.log(atributos2.idade);  
+console.log(atributos2.especie); 
 

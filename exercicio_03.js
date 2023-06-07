@@ -23,11 +23,11 @@ class NerdIF {
   }
 }
 
-const aluno = new NerdIF("João", "Homem-Aranha", 9.5);
+const aluno = new NerdIF("", "Homem-Aranha", 9.5);
 const atributos = aluno.retornarAtributos();
 
 console.log(atributos);
-console.log(atributos.estudante); 
-console.log(atributos.cosplay);   
-console.log(atributos.nota_cosplay);
+//console.log(atributos.estudante); 
+//console.log(atributos.cosplay);   
+//console.log(atributos.nota_cosplay);
 

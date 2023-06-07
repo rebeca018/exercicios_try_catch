@@ -31,7 +31,7 @@ const estudante = new Estudante("", 16, "3A");
 const atributos = estudante.mostrarAtributos();
 
 console.log(atributos);
-console.log(atributos.nome);   
-console.log(atributos.idade);  
-console.log(atributos.turma); 
+//console.log(atributos.nome);   
+//console.log(atributos.idade);  
+//console.log(atributos.turma); 
 

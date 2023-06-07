@@ -1,3 +1,9 @@
+class NerdIfErro extends Error {
+  constructor(message){
+    super(message);
+    this.name = "NerdIfErro";
+  }
+}
 class NerdIF {
   constructor(estudante, cosplay, nota_cosplay) {
     this.estudante = estudante;
@@ -9,16 +15,16 @@ class NerdIF {
     try{
       return this.atributos()
     }catch (erro) {
-      console.log(erro.message)
+      console.log(erro.stack)
     }
   }
 
   atributos() {
-    if((this.estudante != "") && (this.cosplay != "") && (this.nota_cosplay != "")){
+    if(this.estudante != "" && this.cosplay != "" && this.nota_cosplay != ""){
       return this.estudante +  this.cosplay + this.nota_cosplay;
     }
     else{
-      throw new Error ("Está faltando o nome do estudante ou cosplay ou a nota")
+      throw new NerdIfErro ("Está faltando o nome do estudante ou cosplay ou a nota")
     }
   }
 }

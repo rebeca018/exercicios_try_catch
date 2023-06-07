@@ -19,11 +19,8 @@ class Estudante {
 
   atributos() {
     if ((this.nome != "") && (this.idade != "") && (this.turma != "")){
-      return {
-      nome: this.nome,
-      idade: this.idade,
-      turma: this.turma
-    };
+      return  this.nome + this.idade + this.turma;
+
   }else{
     throw new Error ("Nome, idade ou turma estão vazios")
   }
@@ -31,9 +28,9 @@ class Estudante {
 }
 
 const estudante = new Estudante("", 16, "3A");
-
 const atributos = estudante.mostrarAtributos();
 
+console.log(atributos);
 console.log(atributos.nome);   
 console.log(atributos.idade);  
 console.log(atributos.turma); 
